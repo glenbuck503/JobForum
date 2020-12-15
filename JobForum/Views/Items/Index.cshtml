@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hello Friend!</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+</head>
+<body>
+@using JobForum.Models;
+
+<div class = "container">
+  <h1>Jobs!</h1>
+  @if (Model.Count == 0)
+  {
+    <p>There are no jobs in the list.</p>
+  }
+  <ul>
+    @foreach (Job job in Model)
+    {
+      <div class = 'card'>
+        <div class = "card-body">
+          <h3 class= "card-title"><li>Title: @job.Title</li></h3>
+          <ol class= "card-text">
+            <li>Job Description: @job.Description</li>
+            <li>Contact Info: @job.Contact</li>
+          </ol>
+        </div>
+      </div>
+      
+    }
+  </ul>
+
+  <a href="/jobs/new">Add a new job.</a>
+</div>
+</body>
