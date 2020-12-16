@@ -19,17 +19,21 @@
     {
       <div class = 'card'>
         <div class = "card-body">
-          <h3 class= "card-title"><li>Title: @job.Title</li></h3>
-          <ol class= "card-text">
+          <h3 class= "card-title"><li><a href="/items/@job.Id">Title: @job.Title</li></h3>
+          @* <ol class= "card-text">
             <li>Job Description: @job.Description</li>
             <li>Contact Info: @job.Contact</li>
-          </ol>
+          </ol> *@
         </div>
       </div>
       
     }
   </ul>
 
-  <a href="/jobs/new">Add a new job.</a>
+  <a href="/jobs/new">Add a new job.</a><br>
+  <a href='/jobs'>See a list of current Jobs</a>
+  <form action="/items/delete" method="post">
+      <button type="submit" name="button">Clear All Items</button>
+  </form>
 </div>
 </body>

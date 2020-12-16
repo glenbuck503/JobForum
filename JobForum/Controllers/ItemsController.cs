@@ -14,7 +14,7 @@ namespace JobForum.Controllers
     }
 
     [HttpGet("jobs/new")]
-    public ActionResult CreateForm()
+    public ActionResult New()
     {
       return View();
     }
@@ -24,7 +24,20 @@ namespace JobForum.Controllers
     {
       Job myJob = new Job(title, description, contact);
       return RedirectToAction("Index");
+    }
 
+    [HttpPost("/items/delete")]
+    public ActionResult DeleteAll()
+    {
+      Job.ClearAll();
+      return View();
+    }
+
+    [HttpGet("/items/{id}")]
+    public ActionResult Show(int id)
+    {
+      Job foundJob = Job.Find(id);
+      return View(foundJob);
     }
 
 
