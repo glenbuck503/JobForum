@@ -16,7 +16,7 @@ namespace JobForum.TestTools
     [TestMethod]
     public void JobConstructor_CreatesInstanceOfJob_Job()
     {
-      Job newJob = new Job("test", "test");
+      Job newJob = new Job("test", "test", "test");
       Assert.AreEqual(typeof(Job), newJob.GetType());
     }
   }
