@@ -32,5 +32,13 @@ namespace JobForum.TestTools
       Assert.AreEqual(description, newJob.Description);
       Assert.AreEqual(contact, newJob.Contact);
     }
+
+    [TestMethod]
+    public void GetAll_ReturnsEmptyJobList_JobList()
+    {
+      List<Job> newList = new List<Job> { };
+      List<Job> result = Job.GetAll();
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }
